@@ -1,0 +1,52 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+#ItemsPreview td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#ItemsPreview tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#ItemsPreview tr:hover {
+  background-color: #ddd;
+}
+
+#ItemsPreview th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: gray;
+  color: white;
+}
+
+#ItemsPreview button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 0;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+#ItemsPreview {
+  width: 50%;
+  position: absolute;
+  top: 10px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#ItemsPreview table {
+  margin-left: auto;
+  margin-right: auto;
+}

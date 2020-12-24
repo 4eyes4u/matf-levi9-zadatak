@@ -1,6 +1,6 @@
 // Page for adding new item in the DB.
 import React, {Component} from 'react'
-import {Button} from 'react-bootstrap'
+import './ItemAdd.css';
 
 export default class ItemAdd extends Component {
     constructor(props) {
@@ -46,11 +46,13 @@ export default class ItemAdd extends Component {
     render() {
         return (
             <form>
-                <p>Naziv</p>
+              <div id="ItemAdd">
+                <label>Naziv</label>
                 <input type="text" id="nameInput" onChange={this.nameInputChange}></input>
-                <p>Opis</p>
+                <label>Opis</label>
                 <input type="text" id="descriptionInput" onChange={this.descriptionInputChange}></input>
-                <Button variant="primary" onClick={this.sendCallback}>Unesi</Button>
+                <button type="submit" onClick={this.sendCallback}>Unesi</button>
+              </div>
             </form>
         )
     }

@@ -1,6 +1,7 @@
 // Page for previewing what's in the DB and for deletion.
 import React, {Component} from 'react'
-import {Button} from 'react-bootstrap'
+import {Button, Table} from 'react-bootstrap'
+import './ItemsPreview.css';
 
 export default class ItemsPreview extends Component {
   constructor(props) {
@@ -66,16 +67,18 @@ export default class ItemsPreview extends Component {
 
   render() {
     return (
-      <div>
+      <div id="ItemsPreview">
         {this.props.children}
         <table>
-          <tbody>
+          <thead>
             <tr key={""}>
               <th>id</th>
               <th>Naziv</th>
               <th>Opis</th>
               <th>Obriši?</th>
             </tr>
+          </thead>
+          <tbody>
             {
               this.state.tableRows.map((row) => (
                 <tr key={row.name + row.description}>
@@ -83,7 +86,7 @@ export default class ItemsPreview extends Component {
                   <td>{row.name}</td>
                   <td>{row.description}</td>
                   <td>
-                    <Button variant="danger" onClick={() => this.deleteCallback(row.id)}>Obriši</Button>
+                    <button type="submit" onClick={() => this.deleteCallback(row.id)}>Obriši</button>
                   </td>
                 </tr>
               ))

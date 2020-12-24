@@ -1,0 +1,41 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+}
+
+#ItemAdd label {
+  display: block;
+  width: 100%;
+}
+
+#ItemAdd input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  display: block;
+}
+
+#ItemAdd button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0;
+  margin: 8px 0;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+#ItemAdd {
+  width: 50%;
+  position: absolute;
+  top: 10px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
