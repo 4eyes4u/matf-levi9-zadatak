@@ -1,3 +1,4 @@
+// Page for previewing what's in the DB and for deletion.
 import React, {Component} from 'react'
 import {Button} from 'react-bootstrap'
 
@@ -10,7 +11,6 @@ export default class ItemsPreview extends Component {
     }
 
     this.renderCallback = this.renderCallback.bind(this);
-    // this.deleteCallback = this.deleteCallback.bind(this);
   }
 
   componentDidMount() {

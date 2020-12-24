@@ -1,3 +1,4 @@
+// Page for adding new item in the DB.
 import React, {Component} from 'react'
 import {Button} from 'react-bootstrap'
 
