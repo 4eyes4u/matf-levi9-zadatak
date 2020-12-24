@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Button} from 'react-bootstrap'
 
 export default class ItemsPreview extends Component {
   constructor(props) {
@@ -42,7 +43,7 @@ export default class ItemsPreview extends Component {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({productId: id}),
+      body: JSON.stringify({id: id}),
     });
 
     res
@@ -69,12 +70,12 @@ export default class ItemsPreview extends Component {
         {this.props.children}
         <table>
           <tbody>
-            {/* <tr>
+            <tr key={""}>
               <th>id</th>
               <th>Naziv</th>
               <th>Opis</th>
-              <th>Obrisi?</th>
-            </tr> */}
+              <th>Obriši?</th>
+            </tr>
             {
               this.state.tableRows.map((row) => (
                 <tr key={row.name + row.description}>
@@ -82,7 +83,7 @@ export default class ItemsPreview extends Component {
                   <td>{row.name}</td>
                   <td>{row.description}</td>
                   <td>
-                    <button onClick={() => this.deleteCallback(row.id)}></button>
+                    <Button variant="danger" onClick={() => this.deleteCallback(row.id)}>Obriši</Button>
                   </td>
                 </tr>
               ))

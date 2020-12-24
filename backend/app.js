@@ -31,17 +31,17 @@ app.get('/admin/proizvodi', (req, res) => {
 
 app.post('/admin/unos-novog-proizvoda', (req, res) => {
     // Reading data from body.
-    let productName = req.body.productName;
-    let productDescription = req.body.productDescription;
+    let name = req.body.name;
+    let description = req.body.description;
 
     // Adding new product to Map.
-    products.set(products.size, {name: productName, description: productDescription});
+    products.set(products.size, {name: name, description: description});
     res.send(productsToJSON());
 });
 
 app.delete('/admin/proizvodi', (req, res) => {
     // Deleting proper product.
-    let key = req.body.productId;
+    let key = req.body.id;
     products.delete(key);
 
     // Returning remaining products.
