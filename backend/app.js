@@ -3,17 +3,22 @@ const bodyParser = require('body-parser');
 
 const app = express();
 const port = 3001;
+const maxMapKey = 100000000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+function generateMapKey() {
+    return Math.floor(Math.random() * maxMapKey);
+}
+
 // Putting some products.
 products = new Map();
-products.set(0, {name: 'Panceta', description: 'Meso'});
-products.set(1, {name: 'Voda', description: 'Tecnost'});
-products.set(2, {name: 'Sok od pomorandze', description: 'Tecnost'});
-products.set(3, {name: 'Oreo', description: 'Grickalice'});
-products.set(4, {name: 'Pringles', description: 'Grickalice'});
+products.set(generateMapKey(), {name: 'Panceta', description: 'Meso'});
+products.set(generateMapKey(), {name: 'Voda', description: 'Tecnost'});
+products.set(generateMapKey(), {name: 'Sok od pomorandze', description: 'Tecnost'});
+products.set(generateMapKey(), {name: 'Oreo', description: 'Grickalice'});
+products.set(generateMapKey(), {name: 'Pringles', description: 'Grickalice'});
 
 // Transform raw Map to JSON format.
 function productsToJSON() {
@@ -35,7 +40,7 @@ app.post('/admin/unos-novog-proizvoda', (req, res) => {
     let description = req.body.description;
 
     // Adding new product to Map.
-    products.set(products.size, {name: name, description: description});
+    products.set(generateMapKey(), {name: name, description: description});
     res.send(productsToJSON());
 });
 
